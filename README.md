@@ -25,8 +25,6 @@ maven install -Dmaven.test.skip=true
 7   8
 8   9
 ```
-hadoop jar UniCon-1.0.jar unicon.intRange.opt.UniConOpt -DnumPartitions=80 -Dthreshold=10000 -DnumNodes=1696415 graphs/sk.tsv dongchime_result/sk.out
-
 
 - execute UniCon on Hadoop 
 ```
