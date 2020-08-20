@@ -62,7 +62,7 @@ hadoop jar target/UniCon-1.0-SNAPSHOT-jar-with-dependencies.jar unicon.intRange.
 | ClueWeb    | 6,257,706,595 | 71,746,553,402 | Page level hyperlink network on the Web                     | [Lemur Project](http://www.lemurproject.org/clueweb12/webgraph.php/)                   |
 
 ### Synthetic graphs
-CW/k for k ∈ {2, 4, 8, 16, 32, 64, 128} is a subgraph induced by |V |/k sampled nodes.
+CW/k for k ∈ {2, 4, 8, 16, 32, 64, 128} is a subgraph induced by |V |/k sampled nodes of ClueWeb.
 | Name      | #Nodes      | #Edges        |
 |-----------|-------------|---------------|
 | CW/128 | 48,888,332 | 3,829,757 |
