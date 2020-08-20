@@ -54,7 +54,7 @@ hadoop jar target/UniCon-1.0-SNAPSHOT-jar-with-dependencies.jar unicon.intRange.
 ```
 
 ## Datasets
-- Real world graphs
+### Real world graphs
 | Name        | #Nodes      | #Edges        | Description                                                 | Source                           |
 |-------------|-------------|---------------|-------------------------------------------------------------|----------------------------------|
 | Twitter     | 41,652,230  | 1,468,365,182 | Twitter follower-followee network                           | [Advanced Networking Lab at KAIST](http://an.kaist.ac.kr/traces/WWW2010.html) |
@@ -63,7 +63,7 @@ hadoop jar target/UniCon-1.0-SNAPSHOT-jar-with-dependencies.jar unicon.intRange.
 | YahooWeb    | 720,242,173 | 6,636,600,779 | Page level hyperlink network on the Web                     | [Yahoo Webscope](http://webscope.sandbox.yahoo.com/)                   |
 | ClueWeb    | 6,257,706,595 | 71,746,553,402 | Page level hyperlink network on the Web                     | [Lemur Project](http://www.lemurproject.org/clueweb12/webgraph.php/)                   |
 
-- Synthetic graphs
+### Synthetic graphs
 CW/k for k ∈ {2, 4, 8, 16, 32, 64, 128} is a subgraph induced by |V |/k sampled nodes.
 | Name      | #Nodes      | #Edges        |
 |-----------|-------------|---------------|
