@@ -9,7 +9,7 @@
 UniCon uses maven to manage dependencies and build the whole project. To build the project, type the following command in terminal:
 
 ```bash
-maven install -Dmaven.test.skip=true
+mvn install -Dmaven.test.skip=true
 ```
 
 ## Run UniCon
