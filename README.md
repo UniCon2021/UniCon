@@ -59,7 +59,7 @@ hadoop jar target/UniCon-1.0-SNAPSHOT-jar-with-dependencies.jar unicon.intRange.
 | Twitter     | 41,652,230  | 1,468,365,182 | Twitter follower-followee network                           | [Advanced Networking Lab at KAIST](http://an.kaist.ac.kr/traces/WWW2010.html) |
 | Friendster  | 65,608,366  | 1,806,067,135 | Friendster online social network                            | [SNAP](http://snap.stanford.edu/data/com-Friendster.html)                             |
 | SubDomain   | 89,247,739  | 2,043,203,933 | Domain level hyperlink network on the Web                   | [Yahoo Webscope](http://webscope.sandbox.yahoo.com/)                   |
-| gsh-2015    | 988,490,691 | 33,877,399,152 | Domain level hyperlink network on the Web                     | [WebGraph](http://law.di.unimi.it/datasets.php/)                   |
+| gsh-2015    | 988,490,691 | 33,877,399,152 | Domain level hyperlink network on the Web                     | [WebGraph](http://law.di.unimi.it/webdata/gsh-2015/)                   |
 | ClueWeb    | 6,257,706,595 | 71,746,553,402 | Page level hyperlink network on the Web                     | [Lemur Project](http://www.lemurproject.org/clueweb12/webgraph.php/)                   |
 
 ### Synthetic graphs
