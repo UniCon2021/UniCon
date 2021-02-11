@@ -1,6 +1,6 @@
 # UniCon
 
-- UniCon is a tool for finding all connected components in a web-scale graph.
+- UniCon is a tool for finding all connected components in a tremendous graph.
 - Given an undirected graph, UniCon maps each node to the most preceding node in the same connected components.
 - It runs in distributed system, Hadoop. 
 
@@ -48,7 +48,7 @@ Options:
     -Dthreshold            the threshold for LocalCC optimization (default: 0)
     
 Example:
-hadoop jar target/UniCon-1.0-SNAPSHOT-jar-with-dependencies.jar unicon.intRange.opt.UniConOpt -Dmapred.reduce.tasks=80 -DnumPartitions=80 -DnumNodes=720242173 -Dthreshold=20000000 path/to/input/file path/to/output/file
+hadoop jar target/UniCon-1.0-SNAPSHOT-jar-with-dependencies.jar unicon.intRange.opt.UniConOpt -Dmapred.reduce.tasks=80 -DnumPartitions=80 -DnumNodes=4847571 -Dthreshold=200000000 path/to/input/file path/to/output/file
 ```
 
 ## Datasets
