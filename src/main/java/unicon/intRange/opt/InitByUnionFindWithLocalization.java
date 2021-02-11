@@ -18,8 +18,10 @@ import utils.ExternalSorter;
 import utils.TabularHash;
 
 import java.io.IOException;
+import java.util.Iterator;
 import java.util.StringTokenizer;
 import java.util.function.Predicate;
+import java.util.stream.StreamSupport;
 
 public class InitByUnionFindWithLocalization extends Configured implements Tool{
 
@@ -74,8 +76,7 @@ public class InitByUnionFindWithLocalization extends Configured implements Tool{
 	static public class InitializationMapper extends Mapper<Object, Text, LongWritable, LongWritable>{
 		int numPartitions;
 		Int2IntOpenHashMap parent;
-		long num_edges = 0;
-		
+
 		@Override
 		protected void setup(Context context) throws IOException, InterruptedException {
 			parent = new Int2IntOpenHashMap();
@@ -113,7 +114,6 @@ public class InitByUnionFindWithLocalization extends Configured implements Tool{
 			int v = Integer.parseInt(st.nextToken());
 
 			if(find(u) != find(v)) { union(u, v); }
-			num_edges++;
 		}
 
 		@Override
@@ -135,8 +135,6 @@ public class InitByUnionFindWithLocalization extends Configured implements Tool{
 
 		ExternalSorter sorter;
 		int numParts;
-		long arrsize = 0;
-		long numNodes = 0;
 
 		@Override
 		protected void setup(Context context){
@@ -168,26 +166,24 @@ public class InitByUnionFindWithLocalization extends Configured implements Tool{
 			long u_raw = key.get();
 			long u = decode_id(u_raw);
 
-			LongArrayList arr = new LongArrayList();
+			PredicateWithMin lfilter = new PredicateWithMin(u);
 
-			long mpu = Long.MAX_VALUE;
-			for (LongWritable v : values) {
-				long vv = v.get();
-				if (mpu > vv) mpu = vv;
-				arr.add(vv);
-			}
+			Iterator<Long> it = StreamSupport.stream(values.spliterator(), false)
+					.map(LongWritable::get).filter(lfilter).iterator();
 
-			numNodes++;
-			arrsize += arr.size();
+			Iterator<Long> uN_iterator = sorter.sort(it);
 
-			arr.sort(null);
+			long mpu = lfilter.mpu;
 
-			for (long v : arr) {
-				if (v != mpu) {
+			while(uN_iterator.hasNext()){
+				long v = uN_iterator.next();
+
+				if(v != mpu){
 					ov.set((int) v);
 					om.set((int) mpu);
 					context.write(ov, om);
-				} else {
+				}
+				else{
 					ov.set((int) v);
 					om.set((int) u);
 					context.write(ov, om);

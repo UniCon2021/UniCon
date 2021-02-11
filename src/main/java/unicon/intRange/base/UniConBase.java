@@ -49,14 +49,14 @@ public class UniConBase extends Configured implements Tool {
         InitByUnionFindWithLocalization init = new InitByUnionFindWithLocalization(input, output, true);
         ToolRunner.run(conf, init, args);
 
-        logger.info(String.format("Round 0 (Egiza init) ends :\t%.2fs", ((System.currentTimeMillis() - time) / 1000.0)));
+        logger.info(String.format("Round 0 (UniCon-base init) ends :\t%.2fs", ((System.currentTimeMillis() - time) / 1000.0)));
 
         long edgeSize = init.outputSize;
 
         UniStar uniStar;
 
         while (!converge) {
-            logger.info(String.format("(Egiza) Round %d #input edges: %d", round+1, edgeSize));
+            logger.info(String.format("(UniCon-base) Round %d #input edges: %d", round+1, edgeSize));
 
             input = new Path(inputString + "." + round);
             round++;
@@ -67,7 +67,7 @@ public class UniConBase extends Configured implements Tool {
             numChanges = uniStar.numChanges;
             if (numChanges == 0) converge = true;
 
-            logger.info(String.format("Round %d (EgizaUF) ends :\t#input edges of reducer(%d)\tchange(%d)\t%.2fs",
+            logger.info(String.format("Round %d (UniStar) ends :\t#input edges of reducer(%d)\tchange(%d)\t%.2fs",
                     round, uniStar.reducerInputSize, uniStar.numChanges,
                     ((System.currentTimeMillis() - time) / 1000.0)));
         }
@@ -85,7 +85,7 @@ public class UniConBase extends Configured implements Tool {
             fs.delete(new Path(inputString + "." + r), true);
         }
 
-        System.out.print("[EgizaBase-end]\t" + new Path(inputString).getName() + "\t" + new Path(outputString).getName() + "\t" + numPartitions + "\t" + round + "\t");
+        System.out.print("[UniCon-base-end]\t" + new Path(inputString).getName() + "\t" + new Path(outputString).getName() + "\t" + numPartitions + "\t" + round + "\t");
         System.out.print( ((System.currentTimeMillis() - totalTime)/1000.0) + "\t" );
         System.out.println("# input output numPartitions numRounds time(sec)");
 

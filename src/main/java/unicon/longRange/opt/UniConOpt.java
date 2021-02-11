@@ -53,7 +53,7 @@ public class UniConOpt extends Configured implements Tool {
         InitByUnionFindWithLocalization init = new InitByUnionFindWithLocalization(input, output, true);
         ToolRunner.run(conf, init, args);
 
-        logger.info(String.format("Round 0 (CNCC init) ends :\t%.2fs", ((System.currentTimeMillis() - time) / 1000.0)));
+        logger.info(String.format("Round 0 (UniCon-opt init) ends :\t%.2fs", ((System.currentTimeMillis() - time) / 1000.0)));
 
         long edgeSize = init.outputSize;
         long inSize, ccSize, removedSize;
@@ -61,7 +61,7 @@ public class UniConOpt extends Configured implements Tool {
         UniStarOpt uniStarOpt;
 
         while (!converge) {
-            logger.info(String.format("(CNCC) Round %d #input edges: %d", round+1, edgeSize));
+            logger.info(String.format("(UniCon-opt) Round %d #input edges: %d", round+1, edgeSize));
 
             if (edgeSize > threshold) {
                 input = new Path(inputString + "." + round + "/out");
@@ -76,8 +76,8 @@ public class UniConOpt extends Configured implements Tool {
                 inSize = uniStarOpt.numInEdges;
                 ccSize = uniStarOpt.numCcEdges;
                 removedSize = uniStarOpt.numRemovedEdges;
-                logger.info(String.format("Round %d (EgizaUF) ends :\t#IN file size(%d), #CC file size(%d), #REMOVED edge(%d), #OUT file size(%d)", round, inSize, ccSize, removedSize, edgeSize));
-                logger.info(String.format("Round %d (EgizaUF) ends :\tchange(%d)\t%.2fs",
+                logger.info(String.format("Round %d (UniStar-opt) ends :\t#IN file size(%d), #CC file size(%d), #REMOVED edge(%d), #OUT file size(%d)", round, inSize, ccSize, removedSize, edgeSize));
+                logger.info(String.format("Round %d (UniStar-opt) ends :\tchange(%d)\t%.2fs",
                         round, numChanges,
                         ((System.currentTimeMillis() - time) / 1000.0)));
             }
@@ -110,7 +110,7 @@ public class UniConOpt extends Configured implements Tool {
             fs.delete(new Path(inputString + "." + r), true);
         }
 
-        System.out.print("[CNCC-end]\t" + new Path(inputString).getName() + "\t" + new Path(outputString).getName() + "\t" + numPartitions + "\t" + round + "\t");
+        System.out.print("[UniCon-opt-end]\t" + new Path(inputString).getName() + "\t" + new Path(outputString).getName() + "\t" + numPartitions + "\t" + round + "\t");
         System.out.print( ((System.currentTimeMillis() - totalTime)/1000.0) + "\t" );
         System.out.println("# input output numPartitions numRounds time(sec)");
 
