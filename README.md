@@ -63,13 +63,48 @@ hadoop jar target/UniCon-1.0-SNAPSHOT-jar-with-dependencies.jar unicon.intRange.
 | ClueWeb    | 6,257,706,595 | 71,746,553,402 | Page level hyperlink network on the Web                     | [Lemur Project](http://www.lemurproject.org/clueweb12/webgraph.php/)                   |
 
 ### Synthetic graphs
-CW/k for k ∈ {2, 4, 8, 16, 32, 64, 128} is a subgraph induced by |V |/k sampled nodes of ClueWeb.
+RMAT-k for k ∈ {21, 23, 25, 27, 29, 31, 33} is a synthetic graph following RMAT model, and we generate it using TeGViz, a distributed graph generator. \
+We set RMAT parameters (a, b, c, d) to (0.57, 0.19, 0.19, 0.05).
 | Name      | #Nodes      | #Edges        |
 |-----------|-------------|---------------|
-| CW/128 | 48,888,332 | 3,829,757 |
-| CW/64 | 97,776,665 | 16,916,884 |
-| CW/32 | 195,553,331 | 68,557,884 |
-| CW/16 | 391,106,662 | 278,037,241 |
-| CW/8 | 782,213,324 | 1,132,445,224 |
-| CW/4 | 1,564,426,648 | 4,515,676,428 |
-| CW/2 | 3,128,853,297 | 17,928,970,934 |
+| RMAT-21 | 1,114,816 | 31,457,280 |
+| RMAT-23 | 4,120,785 | 125,829,120 |
+| RMAT-25 | 15,212,447 | 503,316,480 |
+| RMAT-27 | 56,102,002 | 2,013,265,920 |
+| RMAT-29 | 207,010,037| 8,053,063,680 |
+| RMAT-31 | 762,829,446 | 32,212,254,720 |
+| RMAT-33 | 2,811,017,147 | 128,849,018,880 |
+
+## Experiments
+### Figure 5: The running time of UniCon-opt and PACC on various τ. 
+[threshold.pdf](https://github.com/UniCon2021/UniCon/files/6553144/threshold.pdf)
+
+### Figure 6: The running time of UniCon-opt, UniCon-base, and PACC increases marginally as ρ increases.
+[partition_time.pdf](https://github.com/UniCon2021/UniCon/files/6553161/partition_time.pdf)
+
+### Figure 7: UniStar reduces both the input and intermediate data sizes by up to 4x and 8x, respectively, compared to UniStar-naïve. o.o.m.: out-of-memory.
+[intermediate_edges.pdf](https://github.com/UniCon2021/UniCon/files/6553249/intermediate_edges.pdf)
+
+### Figure 8: The running time of UniStar and UniStar-naïve, and its' cumulative sums, respectively. UniStar outperforms UniStar-naïve, which fails on CW.
+[intermediate_speed.pdf](https://github.com/UniCon2021/UniCon/files/6553252/intermediate_speed.pdf)
+
+### Figure 9: Filtering dispensable edges (denoted by bars), UniCon-opt shrinks the input size (denoted by lines) by 80.4% on average in each distributed operation.
+[edgefiltering2.pdf](https://github.com/UniCon2021/UniCon/files/6553253/edgefiltering2.pdf)
+
+### Figure 10: By the edge filtering, the running time of UniStar-opt drops quickly showing the best performance.
+[edge_filtering_time.pdf](https://github.com/UniCon2021/UniCon/files/6553254/edge_filtering_time.pdf)
+
+### Figure 11(a): The size of data that UniCon-opt stores in memory with HybridMap, a hash table, and an array, respectively. HybridMap stores as little data as a hash table.
+[hybrid_memory.pdf](https://github.com/UniCon2021/UniCon/files/6553257/hybrid_memory.pdf)
+
+### Figure 11(b): The running time of UniStar-opt with HybridMap, a hash table, and an array, respectively, in each round. UniCon-opt with HybridMap outperforms Unicon-opt with hash tables when the graph is large enough. UniCon-opt with arrays occurs an out-of-memory error on CW.
+[hybrid_speed.pdf](https://github.com/UniCon2021/UniCon/files/6553258/hybrid_speed.pdf)
+
+### Figure 12: Data and machine scalability.(left) UniCon handles up to 4096x larger graphs than competitors. (right) UniCon-opt with optimal τ shows the best performance regardless of the number of machines.
+[data_scale_all.pdf](https://github.com/UniCon2021/UniCon/files/6553259/data_scale_all.pdf)
+
+### Figure 13: The relative running time, compared to UniCon-opt with optimal τ, of competitors on real-world graphs. o.o.m.: out-of-memory error.
+[total_running_time.pdf](https://github.com/UniCon2021/UniCon/files/6553261/total_running_time.pdf)
+
+### Figure 14: The numbers of distributed operations required by UniCon, PACC, and Cracker on real-world graphs. UniCon-opt requires up to 8 and 11 fewer distributed operations than PACC (τ = 0) and Cracker, respectively.
+[distributed_operations.pdf](https://github.com/UniCon2021/UniCon/files/6553264/distributed_operations.pdf)
