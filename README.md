@@ -73,7 +73,7 @@ We set RMAT parameters (a, b, c, d) to (0.57, 0.19, 0.19, 0.05).
 | RMAT-27 | 56,102,002 | 2,013,265,920 |
 | RMAT-29 | 207,010,037| 8,053,063,680 |
 | RMAT-31 | 762,829,446 | 32,212,254,720 |
-| RMAT-33 | 2,811,017,147 | 128,849,018,880 |
+| RMAT-33 | 1,090,562,291 | 128,849,018,880 |
 
 ## Experiments
 ### Figure 5: The running time of UniCon-opt and PACC on various τ. 
