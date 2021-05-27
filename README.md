@@ -63,7 +63,7 @@ hadoop jar target/UniCon-1.0-SNAPSHOT-jar-with-dependencies.jar unicon.intRange.
 | ClueWeb    | 6,257,706,595 | 71,746,553,402 | Page level hyperlink network on the Web                     | [Lemur Project](http://www.lemurproject.org/clueweb12/webgraph.php/)                   |
 
 ### Synthetic graphs
-RMAT-k for k ∈ {21, 23, 25, 27, 29, 31, 33} is a synthetic graph following RMAT model, and we generate it using TeGViz, a distributed graph generator. \
+RMAT-k for k ∈ {21, 23, 25, 27, 29, 31, 33} is a synthetic graph following RMAT model.
 We set RMAT parameters (a, b, c, d) to (0.57, 0.19, 0.19, 0.05).
 | Name      | #Nodes      | #Edges        |
 |-----------|-------------|---------------|
