@@ -76,35 +76,35 @@ We set RMAT parameters (a, b, c, d) to (0.57, 0.19, 0.19, 0.05).
 | RMAT-33 | 1,090,562,291 | 128,849,018,880 |
 
 ## Experiments
-### Figure 5: The running time of UniCon-opt on various τ. 
+### Figure 6: The running time of UniCon-opt on various τ. 
 ![threshold](https://user-images.githubusercontent.com/69777365/129442473-a777d654-80ee-4f64-be34-f9aeab7132e9.png)
 
-### Figure 6: The running time of UniCon-opt and UniCon-base increases marginally as ρ increases.
+### Figure 7: The running time of UniCon-opt and UniCon-base increases marginally as ρ increases.
 ![partition_time](https://user-images.githubusercontent.com/69777365/129442494-9df4effb-8b71-4199-b25c-004a9d8ce897.png)
 
-### Figure 7: UniStar reduces both the input and intermediate data sizes by up to 4x and 8x, respectively, compared to UniStar-naïve. o.o.m.: out-of-memory.
+### Figure 8: UniStar reduces both the input and intermediate data sizes by up to 4x and 8x, respectively, compared to UniStar-naïve. o.o.m.: out-of-memory.
 ![intermediate_edges](https://user-images.githubusercontent.com/69777365/119813243-ffb8e500-bf23-11eb-90e4-290fa0e33d8e.png)
 
-### Figure 8: The running time of UniStar and UniStar-naïve, and its' cumulative sums, respectively. UniStar outperforms UniStar-naïve, which fails on CW.
+### Figure 9: The running time of UniStar and UniStar-naïve, and its' cumulative sums, respectively. UniStar outperforms UniStar-naïve, which fails on CW.
 ![intermediate_speed](https://user-images.githubusercontent.com/69777365/119813269-06dff300-bf24-11eb-8f9a-522ddcf4eb0e.png)
 
-### Figure 9: Filtering dispensable edges (denoted by bars), UniCon-opt shrinks the input size (denoted by lines) by 80.4% on average in each distributed operation.
+### Figure 10: Filtering dispensable edges (denoted by bars), UniCon-opt shrinks the input size (denoted by lines) by 80.4% on average in each distributed operation.
 ![edgefiltering2](https://user-images.githubusercontent.com/69777365/129442500-c1d91d30-c52e-4575-9374-2a15de09f4a8.png)
 
-### Figure 10: By the edge filtering, the running time of UniStar-opt drops quickly showing the best performance.
+### Figure 11: By the edge filtering, the running time of UniStar-opt drops quickly showing the best performance.
 ![edge_filtering_time](https://user-images.githubusercontent.com/69777365/129442509-271522d0-788b-41e2-9068-e4d4e866f2c7.png)
 
-### Figure 11(a): The size of data that UniCon-opt stores in memory with HybridMap, a hash table, and an array, respectively. HybridMap stores as little data as a hash table.
+### Figure 12: The size of data that UniCon-opt stores in memory with HybridMap, a hash table, and an array, respectively. HybridMap stores as little data as a hash table.
 ![hybrid_memory](https://user-images.githubusercontent.com/69777365/119813344-1d864a00-bf24-11eb-8196-d2b5f3ea93d2.png)
 
-### Figure 11(b): The running time of UniStar-opt with HybridMap, a hash table, and an array, respectively, in each round. UniCon-opt with HybridMap outperforms Unicon-opt with hash tables when the graph is large enough. UniCon-opt with arrays occurs an out-of-memory error on CW.
+### Figure 13: The running time of UniStar-opt with HybridMap, a hash table, and an array, respectively, in each round. UniCon-opt with HybridMap outperforms Unicon-opt with hash tables when the graph is large enough. UniCon-opt with arrays occurs an out-of-memory error on CW.
 ![hybrid_speed](https://user-images.githubusercontent.com/69777365/119813364-2414c180-bf24-11eb-8ba5-d19c0b327ead.png)
 
-### Figure 12: Data and machine scalability.(left) UniCon handles up to 4096x larger graphs than competitors. (right) UniCon-opt with optimal τ shows the best performance regardless of the number of machines.
+### Figure 14: Data and machine scalability.(left) UniCon handles up to 4096x larger graphs than competitors. (right) UniCon-opt with optimal τ shows the best performance regardless of the number of machines.
 ![data_scale_all](https://user-images.githubusercontent.com/69777365/129442519-73ad61b2-84aa-4b72-a554-c121217361f0.png)
 
-### Figure 13: The relative running time, compared to UniCon-opt with optimal τ, of competitors on real-world graphs. o.o.m.: out-of-memory error.
+### Figure 15: The relative running time, compared to UniCon-opt with optimal τ, of competitors on real-world graphs. o.o.m.: out-of-memory error.
 ![total_running_time](https://user-images.githubusercontent.com/69777365/129442524-2488cf03-3cac-4d07-bfef-a267c773703a.png)
 
-### Figure 14: The numbers of distributed operations required by all algorithm except Rem on real-world graphs. UniCon-opt requires up to 11 fewer rounds than competitors.
+### Figure 16: The numbers of distributed operations required by all algorithm except Rem on real-world graphs. UniCon-opt requires up to 11 fewer rounds than competitors.
 ![distributed_operations](https://user-images.githubusercontent.com/69777365/129442529-6b34e4c6-b0d2-4eb5-b473-042c079f1f21.png)
