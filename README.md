@@ -61,7 +61,7 @@ hadoop jar target/UniCon-1.0-SNAPSHOT-jar-with-dependencies.jar unicon.intRange.
 | SubDomain   | 89,247,739  | 2,043,203,933 | Domain level hyperlink network on the Web                   | [Web Data Commons](http://webdatacommons.org/hyperlinkgraph/index.html)                   |
 | gsh-2015    | 988,490,691 | 33,877,399,152 | Domain level hyperlink network on the Web                     | [WebGraph](http://law.di.unimi.it/webdata/gsh-2015/)                   |
 | ClueWeb    | 6,257,706,595 | 71,746,553,402 | Page level hyperlink network on the Web                     | [Lemur Project](http://www.lemurproject.org/clueweb12/webgraph.php/)                   |
-| Hyperlink    | 3,443,082,324 | 128,736,914,167 | Page level hyperlink network on the Web                     | [Web Data Commons](http://webdatacommons.org/hyperlinkgraph/)                   |
+| Hyperlink14   | 3,443,082,324 | 128,736,914,167 | Page level hyperlink network on the Web                     | [Web Data Commons](http://webdatacommons.org/hyperlinkgraph/)                   |
 
 ### Synthetic graphs
 RMAT-k for k ∈ {21, 23, 25, 27, 29, 31, 33} is a synthetic graph following RMAT model.
@@ -78,28 +78,28 @@ We set RMAT parameters (a, b, c, d) to (0.57, 0.19, 0.19, 0.05).
 
 ## Experiments
 ### Figure 6: The running time of UniCon-opt on various τ. 
-![threshold](https://user-images.githubusercontent.com/69777365/129442473-a777d654-80ee-4f64-be34-f9aeab7132e9.png)
+![threshold-1](https://user-images.githubusercontent.com/69777365/200504614-4cb725a3-78ab-405e-8a9a-47f16f02aa4d.png)
 
 ### Figure 7: The running time of UniCon-opt and UniCon-base increases marginally as ρ increases.
-![partition_time](https://user-images.githubusercontent.com/69777365/129442494-9df4effb-8b71-4199-b25c-004a9d8ce897.png)
+![partition_time-1](https://user-images.githubusercontent.com/69777365/200504680-014131e8-c19d-4cdc-b709-ad68c11ec6e5.png)
 
 ### Figure 8: UniStar reduces both the input and intermediate data sizes by up to 4x and 8x, respectively, compared to UniStar-naïve. o.o.m.: out-of-memory.
-![intermediate_edges](https://user-images.githubusercontent.com/69777365/119813243-ffb8e500-bf23-11eb-90e4-290fa0e33d8e.png)
+![intermediate_edges-1](https://user-images.githubusercontent.com/69777365/200504747-4843fff0-27dd-41fd-a4a8-defb193aada3.png)
 
 ### Figure 9: The running time of UniStar and UniStar-naïve, and its' cumulative sums, respectively. UniStar outperforms UniStar-naïve, which fails on CW.
-![intermediate_speed](https://user-images.githubusercontent.com/69777365/119813269-06dff300-bf24-11eb-8f9a-522ddcf4eb0e.png)
+![intermediate_speed-1](https://user-images.githubusercontent.com/69777365/200504805-b8ce5afb-edcf-4e45-96fd-e9a5610e954d.png)
 
 ### Figure 10: Filtering dispensable edges (denoted by bars), UniCon-opt shrinks the input size (denoted by lines) by 80.4% on average in each distributed operation.
-![edgefiltering2](https://user-images.githubusercontent.com/69777365/129442500-c1d91d30-c52e-4575-9374-2a15de09f4a8.png)
+![edgefiltering-1](https://user-images.githubusercontent.com/69777365/200504874-88fa4d98-af39-4a57-9e90-06fd383a24c5.png)
 
 ### Figure 11: By the edge filtering, the running time of UniStar-opt drops quickly showing the best performance.
-![edge_filtering_time](https://user-images.githubusercontent.com/69777365/129442509-271522d0-788b-41e2-9068-e4d4e866f2c7.png)
+![edge_filtering_time-1](https://user-images.githubusercontent.com/69777365/200504927-6c9e24e9-00bd-4683-8e1b-b1cdbf19e8ca.png)
 
 ### Figure 12: The size of data that UniCon-opt stores in memory with HybridMap, a hash table, and an array, respectively. HybridMap stores as little data as a hash table.
-![hybrid_memory](https://user-images.githubusercontent.com/69777365/119813344-1d864a00-bf24-11eb-8196-d2b5f3ea93d2.png)
+![hybrid_memory-1](https://user-images.githubusercontent.com/69777365/200504977-d2d6f523-fea0-4bbf-a771-65d78ce0765d.png)
 
 ### Figure 13: The running time of UniStar-opt with HybridMap, a hash table, and an array, respectively, in each round. UniCon-opt with HybridMap outperforms Unicon-opt with hash tables when the graph is large enough. UniCon-opt with arrays occurs an out-of-memory error on CW.
-![hybrid_speed](https://user-images.githubusercontent.com/69777365/119813364-2414c180-bf24-11eb-8ba5-d19c0b327ead.png)
+![hybrid_speed-1](https://user-images.githubusercontent.com/69777365/200505062-f0ab61a8-3280-44b9-a829-1285eba19ba4.png)
 
 ### Figure 14: Data and machine scalability.(left) UniCon handles up to 4096x larger graphs than competitors. (right) UniCon-opt with optimal τ shows the best performance regardless of the number of machines.
 ![data_scale_all](https://user-images.githubusercontent.com/69777365/129442519-73ad61b2-84aa-4b72-a554-c121217361f0.png)
